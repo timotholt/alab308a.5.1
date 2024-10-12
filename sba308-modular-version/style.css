@@ -1,0 +1,224 @@
+/* Get rid of all padding and margins by default */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  /* Give us a nice body to work with */
+  /* height: 100%; */
+  /* width: 100%; */
+  margin: 1em 1em 1em 1em;
+  padding: 1em 1em 1em 1em;
+  width: 90vw;
+  width: 90dvw;
+
+  /* Give us a nice gradient background */
+  background-image: linear-gradient(to top, #613c81 0%, #ab82ab 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Align everything in the body centered by default */
+  justify-content: center;
+  justify-items: center;
+
+  /* Default font should be a nice sans-serif */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8em;
+}
+
+.gridContainer {
+  display: grid;
+  width: min-content;
+  grid-template-areas:
+      'header header header'
+      'course assignments submissions'
+      'console console console'
+      'calculated rawActual rawExpected';
+      /* 'blank actual expected'; */
+  gap: 1em;
+}
+
+.gridContainer h1 {
+  text-align: center;
+}
+
+.resultContainer, #consoleContainer, #calculatedContainer {
+  background-color: #400040;
+  color: #f0f0f0;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0.5em;
+  padding: 0.5em 0em 0.0em 0em;
+}
+
+#title, #lessons, #course, #assignments, #submissions, #expectedResult, #actualResult, #rawExpected, #rawActual, #console {
+  background-color: #400040;
+  text-align: center;
+  color: #f0f0f0;
+  padding: 1em;
+  border-radius: 0em 0em 0.5em 0.5em;
+  height:min-content;
+}
+
+#title {
+  /* Make this the top of the screen */
+  grid-area: header;
+  border-radius: 0.5em;
+  font-weight: bold;
+  width: auto;
+}
+
+#consoleContainer {
+  grid-area: console;
+  width: auto;
+}
+
+#console {
+  /* Make this the top of the screen */
+  border-radius: 0.5em;
+  font-weight: bold;
+  width: auto;
+  margin-top: 0.5em;
+  background-color: #600060;
+  background-color: black;
+  font-weight: normal;
+  border-top-left-radius: 0em;
+  border-top-right-radius: 0em;
+  text-align: left;
+  line-height: 1.4;
+
+  /* Make the console scroll, and style the scrollbar */
+  overflow-y: auto;
+  max-height: 20em;
+  scrollbar-color: #A0A0A0 #600060;
+}
+
+#console pre {
+  font-size: 1.3em;
+}
+
+#expectedResult, #rawExpected, #actualResult, #rawActual, #calculated, #course, #assignments, #submissions {
+  margin-top: 0.5em;
+  background-color: #600060;
+  font-weight: normal;
+
+  /* Make the children below follow a grid of */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: justify;
+  justify-items: stretch;
+  column-gap: 0.5em;
+}
+
+#expectedResult {
+  display: grid;
+  grid-area: expected;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#actualResult {
+  display: grid;
+  grid-area: actual;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#calculatedContainer {
+  width: 20em;
+}
+
+#calculated {
+
+  /* Make this the left column in the bottom area */
+  grid-area: calculated;
+  margin-top: 0.5em;
+
+  /* Make the corners round */
+  border-radius: 0em 0em 0.5em 0.5em;
+
+  /* Make each item a single row */
+  grid-template-columns: 1fr;
+  text-align: left;
+  padding: 1em;
+}
+
+#course {
+  grid-area: course;
+  margin-top: 0.5em;
+
+  /* Make each item a single row */
+  grid-template-columns: 1fr;
+  text-align: left;
+  padding: 1em;  
+
+  /* Make the submissions scroll, and style the scrollbar */
+  overflow-y: auto;
+  max-height: 20em;
+  scrollbar-color: #A0A0A0 #600060;    
+}
+
+#assignments {
+  grid-area: assignments;
+  margin-top: 0.5em;
+
+  /* Make each item a single row */
+  grid-template-columns: 1fr;
+  text-align: left;
+  padding: 1em;  
+
+  /* Make the submissions scroll, and style the scrollbar */
+  overflow-y: auto;
+  max-height: 20em;
+  scrollbar-color: #A0A0A0 #600060;  
+}
+
+#submissions {
+  grid-area: submissions;
+  margin-top: 0.5em;
+
+  /* Make each item a single row */
+  grid-template-columns: 1fr;
+  text-align: left;
+  padding: 1em;  
+
+  /* Make the submissions scroll, and style the scrollbar */
+  overflow-y: auto;
+  max-height: 20em;
+  scrollbar-color: #A0A0A0 #600060;  
+}
+
+#rawExpected {
+  grid-area: rawExpected;
+  margin-top: 0.5em;
+
+  /* Make each item a single row */
+  grid-template-columns: 1fr;
+  text-align: left;
+  padding: 1em;  
+
+  /* Make the submissions scroll, and style the scrollbar */
+  overflow-y: auto;
+  max-height: 20em;
+  scrollbar-color: #A0A0A0 #600060;  
+}
+
+#rawActual {
+  grid-area: rawActual;
+  margin-top: 0.5em;
+
+  /* Make each item a single row */
+  grid-template-columns: 1fr;
+  text-align: left;
+  padding: 1em;  
+
+  /* Make the submissions scroll, and style the scrollbar */
+  overflow-y: auto;
+  max-height: 20em;
+  scrollbar-color: #A0A0A0 #600060;  
+}
+
+
+.object-value {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}

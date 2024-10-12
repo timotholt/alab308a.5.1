@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBA 308</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="gridContainer">
+
+        <!-- These are the divs that we populate in displayhtml.js -->
+        <div id="title"></div>
+        <div id="consoleContainer">
+            Console
+            <div id="console"></div>
+        </div>
+        <div class="resultContainer">
+            Course
+            <div id="course"></div>
+        </div>
+        <div class="resultContainer">
+            Assignments
+            <div id="assignments"></div>
+        </div>
+        <div class="resultContainer">
+            Submissions
+            <div id="submissions"></div>
+        </div>
+        <div id="calculatedContainer">
+            Calculated Data
+            <div id="calculated"></div>
+        </div>
+        <div class="resultContainer">
+            Expected Result (Raw)
+            <div id="rawExpected"></div>
+        </div>
+        <div class="resultContainer">
+            Actual Result (Raw)
+            <div id="rawActual"></div>
+        </div>
+        <div id="calculatedContainer">
+            Unused
+            <div id="unused"></div>
+        </div>
+        <div class="resultContainer">
+            Expected Result (Cooked)
+            <div id="expectedResult"></div>
+        </div>
+        <div class="resultContainer">
+            Actual Result (Cooked)
+            <div id="actualResult"></div>
+        </div>
+    </div>
+
+    <!-- Replace the console so we can output it to the web page -->
+    <script type="module" src="./replaceconsole.js"></script>
+
+    <!-- These two files are the heart of the application -->
+    <script type="module" src="./validate.js"></script>
+    <script type="module"src="./script.js"></script>
+
+    <!-- Output the results to the webpage -->
+    <script type="module" src="./displayhtml.js"></script>    
+</body>
+</html>
